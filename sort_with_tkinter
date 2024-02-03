@@ -41,4 +41,14 @@ def insertion_sort(arr):
         arr[j+1] = key
     return arr
 
+# Функция для запуска сортировки
+
+def start_sorting():
+    try:
+        # Получаем числа из поля ввода и преобразуем их в список целых чисел
+        numbers = list(map(int, entry_field.get().split(',')))
+    except ValueError:
+        result_label.config(text="Пожалуйста, введите корректную последовательность чисел, разделенных запятыми.")
+        return
+
 
