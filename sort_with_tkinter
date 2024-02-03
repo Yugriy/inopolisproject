@@ -51,4 +51,36 @@ def start_sorting():
         result_label.config(text="Пожалуйста, введите корректную последовательность чисел, разделенных запятыми.")
         return
 
+ # Получаем выбранный метод сортировки
+    method = sort_method.get()
+
+
+
+
+# Выполняем сортировку
+    if method == 'Bubble Sort':
+        sorted_numbers = bubble_sort(numbers)
+    elif method == 'Selection Sort':
+        sorted_numbers = selection_sort(numbers)
+    elif method == 'Quick Sort':
+        sorted_numbers = quick_sort(numbers)
+    elif method == 'Insertion Sort':
+        sorted_numbers = insertion_sort(numbers)
+
+    end_time = time.time()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
