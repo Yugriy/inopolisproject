@@ -57,6 +57,8 @@ def start_sorting():
 
 
 
+
+
 # Выполняем сортировку
     if method == 'Bubble Sort':
         sorted_numbers = bubble_sort(numbers)
@@ -69,6 +71,38 @@ def start_sorting():
 
     end_time = time.time()
 
+# Выводим отсортированные числа и время сортировки
+    result_label.config(text=f"Отсортированные числа: {sorted_numbers}")
+    time_label.config(text=f"Время сортировки: {end_time - start_time:.6f} секунд")
+
+# Настройка основного окна
+
+root = tk.Tk()
+root.title("Сортировка чисел")
+
+# Поле ввода
+entry_field = tk.Entry(root, width=50)
+entry_field.pack()
+
+# Раскрывающийся список
+sort_method = tk.StringVar()
+sort_method.set("Bubble Sort")  # установка по умолчанию
+sort_menu = ttk.Combobox(root, textvariable=sort_method, values=["Bubble Sort", "Selection Sort", "Quick Sort", "Insertion Sort"])
+sort_menu.pack()
+
+# Кнопка запуска сортировки
+start_button = tk.Button(root, text="Start", command=start_sorting)
+start_button.pack()
+
+# Метка для вывода результата
+result_label = tk.Label(root, text="", wraplength=300)
+result_label.pack()
+
+# Метка для вывода времени сортировки
+time_label = tk.Label(root, text="")
+time_label.pack()
+
+root.mainloop()
 
 
 
