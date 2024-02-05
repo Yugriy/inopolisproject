@@ -3,7 +3,6 @@ from tkinter import ttk
 import time
 
 # Функции сортировки
-
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
@@ -42,7 +41,6 @@ def insertion_sort(arr):
     return arr
 
 # Функция для запуска сортировки
-
 def start_sorting():
     try:
         # Получаем числа из поля ввода и преобразуем их в список целых чисел
@@ -54,10 +52,8 @@ def start_sorting():
  # Получаем выбранный метод сортировки
     method = sort_method.get()
 
-
-
-
-
+# Измеряем время сортировки
+    start_time = time.time()
 
 # Выполняем сортировку
     if method == 'Bubble Sort':
@@ -76,7 +72,6 @@ def start_sorting():
     time_label.config(text=f"Время сортировки: {end_time - start_time:.6f} секунд")
 
 # Настройка основного окна
-
 root = tk.Tk()
 root.title("Сортировка чисел")
 
